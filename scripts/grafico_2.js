@@ -6,7 +6,7 @@ const locale = {
 }
 d3.formatDefaultLocale(locale)
 
-d3.dsv(';', '../data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
+d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
   console.log(data)
   // Guardamos el svg generado en la variable chart
   let chart = Plot.plot({
