@@ -1,5 +1,5 @@
 const mapaFetch = d3.json('barrios-caba.geojson')
-const dataFetch = d3.dsv(';', '../data/vehiculos_mal_estacionados.csv', d3.autoType)
+const dataFetch = d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType)
 
 Promise.all([mapaFetch, dataFetch]).then(([barrios, data]) => {
   
@@ -37,7 +37,7 @@ Promise.all([mapaFetch, dataFetch]).then(([barrios, data]) => {
     marks: [
       Plot.geo(barrios, {
         fill: d => d.properties.DENUNCIAS,
-        stroke: 'gray',
+        stroke: 'grey',
         title: d => `${d.properties.BARRIO}\n${d.properties.DENUNCIAS} denuncias`,
       }),
       Plot.text(
