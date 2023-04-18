@@ -1,0 +1,119 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+section{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+    max-width: 960px;
+    text-align: center;
+}
+
+.titulo{
+    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    padding-bottom: 3%;
+    padding-top: 2%;
+
+}
+
+small{
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+    padding-bottom: 1%;
+    color: gray;
+    font-weight: 300;
+    padding-top: 3%;
+}
+
+.fecha{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.container {
+    max-width: 1280px;
+    margin:auto;
+  }
+
+.top {
+    max-width: auto;
+    background-color: rgb(34, 34, 109);
+
+  }
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+h2{
+
+    font-size: 1.5em;
+    margin: 0.5em 0 0.5em 0;
+}
+h3{
+    text-align: left;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+ 
+}
+p{
+    font-size: 1.0em;
+    text-align: left;
+    margin: 0.5em;
+}
+#grafico_1 svg, #grafico_2 svg, #grafico_3 svg {
+    max-width: initial;
+    padding-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    max-width: 200px;
+    min-width: 200px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+footer{
+    margin-top: 30px;
+    position: relative;
+    background:  rgb(34, 34, 109);
+    color: #fff;
+    max-width: none;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content p{
+    max-width: 500px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.footer-bottom{
+    background: rgb(34, 34, 109);
+    padding-bottom: 30px;
+    text-align: center;
+}
+.footer-bottom p{
+    text-align: center;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
