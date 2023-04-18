@@ -16,6 +16,11 @@ d3.dsv(";", "../data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) =
       label: "Cantidad",
     },
 
+    color: {
+      // Quantize continuo (cant. denuncias) -> discreto (cant. colores)
+      scheme: 'blues',
+    },
+
     marks: [
       Plot.barY(
         data,
@@ -23,7 +28,7 @@ d3.dsv(";", "../data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) =
           { y: 'count' },
           {
             x: 'canal',
-            fill: 'canal',
+            fill: d => d.canal === "App Denuncia Vial" ? 'rgb(52,106,166)' : d.canal === "App BA 147" ? 'rgb(92,164,204)' : d.canal === "GCS Web" ? "rgb(109,139,175)" : d.canal === "Boti" ? "rgb(172,212,228)" : d.canal === "Mail 147" ? 'rgb(92,164,204)': 'rgb(27,92,163)',
             sort: { x: 'y', reverse: true },
           },
         ),
@@ -32,7 +37,7 @@ d3.dsv(";", "../data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) =
         x: d => d[0],
         y: d => d[1] + 50, // Adjust the y-position of the text
         text: d => d[1], // Use the quantity as the text label
-        fill: d => d[0],
+        fill: d => d[0] === "App Denuncia Vial" ? 'rgb(52,106,166)' : d[0] === "App BA 147" ? 'rgb(92,164,204)' : d[0] === "GCS Web" ? "rgb(109,139,175)" : d[0] === "Boti" ? "rgb(172,212,228)" : d[0] === "Mail 147" ? 'rgb(92,164,204)': 'rgb(27,92,163)',
         align: "center",
         baseline: "bottom",
         fontSize: 15,

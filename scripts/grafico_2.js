@@ -29,7 +29,7 @@ d3.dsv(';', '../data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => 
               )
             },
             y: 'domiclio_calle',
-            fill: 'domiclio_calle', 
+            fill: d => d.domiclio_calle === "CERVIÑO AV." || d.domiclio_calle === "SANTA FE AV." || d.domiclio_calle === "CAMPOS, LUIS M. AV." || d.domiclio_calle === "DEL LIBERTADOR AV." ? 'rgb(27,92,163)' : 'rgb(202,218,229)',
             sort: { y: 'x', reverse: true },
           },
         ),
