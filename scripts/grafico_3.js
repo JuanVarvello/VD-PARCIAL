@@ -1,4 +1,4 @@
-d3.dsv(";", "../data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
+d3.dsv(";", "data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
   data = data.filter((d) => d.domicilio_barrio == "PALERMO");
   let counts = d3.rollup(
     data,
