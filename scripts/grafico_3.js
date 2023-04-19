@@ -6,15 +6,15 @@ d3.dsv(";", "data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
     d => d.canal // Agrupar por canal
   );
   let chart = Plot.plot({
-    
+
     x: {
-      label:"",
-      
+      label: "",
     },
 
     y: {
-  
-      label: "Cantidad de denuncias",
+      label: "",
+      ticks: 0,
+      line: false,
     },
 
     color: {
@@ -38,15 +38,14 @@ d3.dsv(";", "data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
         x: d => d[0],
         y: d => d[1] + 30, // Adjust the y-position of the text
         text: d => d[1], // Use the quantity as the text label
-        fill: d => d[0] === "App Denuncia Vial" ? 'rgb(52,106,166)' : 'rgb(202,218,229)',
-        align: "center",
+        
         baseline: "bottom",
         fontSize: 15,
         fontWeight: "bold",
       }),
     ],
     width: 800,
-    height: 400,
+    height: 500,
 
     nice: true,
     color: true,
