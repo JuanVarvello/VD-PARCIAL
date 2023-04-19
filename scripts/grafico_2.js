@@ -11,38 +11,34 @@ d3.formatDefaultLocale(locale)
 
 d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
   // Guardamos el svg generado en la variable chart
+  let dataFiltrada =data.filter( d => d.domicilio_barrio == 'PALERMO' &&
+              d.domiclio_calle.includes('AV.') && (
+                d.domiclio_calle.includes('CERVIÑO') ||
+                d.domiclio_calle.includes('SANTA FE') ||
+                d.domiclio_calle.includes('CAMPOS, LUIS') ||
+                d.domiclio_calle.includes('DEL LIBERTADOR') ||
+                d.domiclio_calle.includes('OLLEROS') ||
+                d.domiclio_calle.includes('CABILDO') ||
+                d.domiclio_calle.includes('DORREGO') ||
+                d.domiclio_calle.includes('CORDOBA') ||
+                d.domiclio_calle.includes('DIAZ') ||
+                d.domiclio_calle.includes('CHENAUT') ||
+                d.domiclio_calle.includes('HONDURAS')))
   let chart = Plot.plot({
     x: {
-      label: 'Cantidad',
+      label: '',
+      ticks: 0,
+      line: false
     },
     y: {
       label: '',
     },
     marks: [
       Plot.barX(
-        data,
+        dataFiltrada,
         Plot.groupY(
           { x: 'count' },
           {
-            filter: d => {
-              return (
-                d.domicilio_barrio == 'PALERMO' &&
-                d.domiclio_calle.includes('AV.') && (
-                  d.domiclio_calle.includes('CERVIÑO') ||
-                  d.domiclio_calle.includes('SANTA FE') ||
-                  d.domiclio_calle.includes('CAMPOS, LUIS') ||
-                  d.domiclio_calle.includes('DEL LIBERTADOR') ||
-                  d.domiclio_calle.includes('OLLEROS') ||
-                  d.domiclio_calle.includes('CABILDO') ||
-                  d.domiclio_calle.includes('DORREGO') ||
-                  d.domiclio_calle.includes('CORDOBA') ||
-                  d.domiclio_calle.includes('DIAZ') ||
-                  d.domiclio_calle.includes('CHENAUT') ||
-                  d.domiclio_calle.includes('HONDURAS')
-                )
-              )
-            },
-
             y: 'domiclio_calle',
             fill: d => d.domiclio_calle === "CERVIÑO AV." || d.domiclio_calle === "SANTA FE AV." || d.domiclio_calle === "CAMPOS, LUIS M. AV." ? 'rgb(27,92,163)' : 'rgb(202,218,229)',
             sort: { y: 'x', reverse: true },
@@ -51,14 +47,19 @@ d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
       ),
 
 
-      Plot.text(data, {
-        text: d => d.domiclio_calle,
-        textAnchor: 'start',
-        dx: 5,
-        fill: 'black',
-        stroke: 'white',
-        strokeWidth: 1
-      })
+      Plot.text(dataFiltrada, 
+        Plot.groupY(
+          { x: 'count', text: 'count' },
+          {
+            y: 'domiclio_calle',
+            fill: d => d.domiclio_calle === "CERVIÑO AV." || d.domiclio_calle === "SANTA FE AV." || d.domiclio_calle === "CAMPOS, LUIS M. AV." ? 'rgb(27,92,163)' : 'rgb(202,218,229)',
+            sort: { y: 'x', reverse: true },
+            dx: 15,
+            fontSize: 15,
+            fontWeight: "bold",
+          },
+        ),
+      ),
     ],
 
     line: true,
