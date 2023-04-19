@@ -35,7 +35,7 @@ d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
         ),
       ),
     ],
-    grid: true,
+    
     line: true,
     nice: true,
     color:true,

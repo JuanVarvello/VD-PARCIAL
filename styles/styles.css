@@ -18,23 +18,12 @@ hr{
     margin-right: 15%;
 
 }
-small{
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    padding-bottom: 1%;
-    color: gray;
-    font-weight: 300;
-    padding-top: 3%;
-}
 
 .fecha{
     font-family: 'Arial', 'Helvetica','sans-serif';
     font-size: 16px;
-    font-weight: bold;
     padding-top: 2%;
     padding-bottom: 2.5%;
-
 }
 
 .container {
@@ -71,6 +60,7 @@ p{
     font-size: 20px;
     text-align: left;
     margin: 0.5em;
+    line-height: 25px;
 }
 #grafico_1 svg, #grafico_2 svg, #grafico_3 svg {
     max-width: initial;
