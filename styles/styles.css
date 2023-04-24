@@ -7,10 +7,9 @@ section{
 }
 
 .titulo{
+    text-align: left;
     margin-left: 15%;
     margin-right: 15%;
-
-
 }
 
 
@@ -18,7 +17,6 @@ hr{
     border: 1.5px solid rgb(34, 34, 109);
     margin-left: 15%;
     margin-right: 15%;
-
 }
 
 .fecha{
@@ -26,6 +24,8 @@ hr{
     font-size: 16px;
     padding-top: 2%;
     padding-bottom: 2.5%;
+
+    
 }
 
 .container {
@@ -73,12 +73,14 @@ p{
     text-align: left;
     margin: 0.5em;
     line-height: 25px;
+    padding-top: 1%;
 }
 #grafico_1 svg, #grafico_2 svg, #grafico_3 svg {
     max-width: initial;
     padding-top: 5px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 5px;
 }
 
 img {

@@ -31,6 +31,10 @@ d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
 
   let chart = Plot.plot({
 
+    style:{
+      fontSize: 12,
+    },
+
     x: {
       label: '',
       ticks: 0,
@@ -39,6 +43,7 @@ d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
 
     y: {
       label: '',
+      tickFormat: d => "AV. " + d.replace('AV.', '')
     },
 
     marks: [
@@ -62,7 +67,7 @@ d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
             
             sort: { y: 'x', reverse: true },
             dx: 15,
-            fontSize: 15,
+            fontSize: 18,
             fontWeight: "bold",
           },
         ),

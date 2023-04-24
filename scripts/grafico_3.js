@@ -7,8 +7,16 @@ d3.dsv(";", "data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
   );
   let chart = Plot.plot({
 
+    style:{
+      fontSize: 15,
+    },
+    
     x: {
       label: "",
+
+      /*modify size of ticks to 30*/
+      tickFormat: d => d,
+
     },
 
     y: {
@@ -40,7 +48,7 @@ d3.dsv(";", "data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
         text: d => d[1], // Use the quantity as the text label
         
         baseline: "bottom",
-        fontSize: 15,
+        fontSize: 18,
         fontWeight: "bold",
       }),
     ],
