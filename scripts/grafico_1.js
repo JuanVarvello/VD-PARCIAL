@@ -53,8 +53,8 @@ Promise.all([mapaFetch, dataFetch]).then(([barrios, data]) => {
         })
       )
     ],
-    height: 450,
-    width: 450,
+    height: 600,
+    width: 600,
   })
 
   /* Agregamos al DOM la visualización chartMap */
