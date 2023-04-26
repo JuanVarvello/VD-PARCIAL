@@ -77,7 +77,7 @@ d3.dsv(';', 'data/vehiculos_mal_estacionados.csv', d3.autoType).then(data => {
     line: true,
     nice: true,
     color: true,
-    marginLeft: 180,
+    marginLeft: 190,
     width: 800,
     height: 500,
   })

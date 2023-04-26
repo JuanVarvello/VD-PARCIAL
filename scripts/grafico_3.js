@@ -53,7 +53,7 @@ d3.dsv(";", "data/vehiculos_mal_estacionados.csv", d3.autoType).then((data) => {
       }),
     ],
     width: 800,
-    height: 500,
+    height: 600,
 
     nice: true,
     color: true,

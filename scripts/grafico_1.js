@@ -48,7 +48,7 @@ Promise.all([mapaFetch, dataFetch]).then(([barrios, data]) => {
           stroke: "black",
           strokeWidth: 2,
           textAnchor: "center",
-          fontSize: 14,
+          fontSize: 12,
           dx: 4,
           filter: (d) => d.properties.DENUNCIAS > 500
         })
