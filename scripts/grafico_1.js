@@ -48,13 +48,14 @@ Promise.all([mapaFetch, dataFetch]).then(([barrios, data]) => {
           stroke: "black",
           strokeWidth: 2,
           textAnchor: "center",
+          fontSize: 12,
           dx: 4,
           filter: (d) => d.properties.DENUNCIAS > 500
         })
       )
     ],
-    height: 600,
-    width: 600,
+    height: 550,
+    width: 550,
   })
 
   /* Agregamos al DOM la visualización chartMap */
